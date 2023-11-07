@@ -22,7 +22,7 @@ print(data)
 
 
 
-#FEATURE ENGINEERING
+# FEATURE ENGINEERING
 
 
 # Data visualization
@@ -37,14 +37,14 @@ plot.show()
 print(data.corr())
 
 
-#Visualizing correlation
+# Visualizing correlation
 correlations = data.corr(method='pearson')
 plt.figure(figsize=(20, 20))
 cmap1=cmap.Colormap(['red','green','purple'])
 sns.heatmap(correlations, annot=True,linecolor='black',linewidths=3)
 plt.show()
 
-#Algorithm for Model Building
+# Algorithm for Model Building
 x = data[["Total Price", "Base Price"]]
 y = data["Units Sold"]
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.2, random_state=42)
@@ -53,7 +53,7 @@ from sklearn.tree import DecisionTreeRegressor
 model = DecisionTreeRegressor()
 model.fit(xtrain.values, ytrain.values)
 
-#PREDICTING THE DEMAND
+# PREDICTING THE DEMAND
 features = np.array([[133.00, 140.00]])
 prediction = model.predict(features)
 print(prediction)
